@@ -28,8 +28,8 @@ const setSelectedCell = action(function (row, column) {
 });
 
 function isSelectedCell(row, column) {
-  // return computed(()=>selectedCell.index === `${row}_${column}`);
-  return selectedCell.index === `${row}_${column}`;
+  const isSelected = computed(() => selectedCell.index === `${row}_${column}`);
+  return isSelected.get();
 }
 
 function getSelectedCellFormula() {

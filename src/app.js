@@ -3,10 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 
-import { useStrict } from 'mobx';
+import {useStrict} from 'mobx';
 useStrict(true);
 
 ReactDOM.render(
-    <App/>,
+  <App/>,
     document.getElementById('root')
 );
