@@ -1,5 +1,13 @@
 .cell {
   border: 1px solid #DADADA;
+  //background-color: blueviolet;
+  width: 100px;
+  height: 30px;
+}
+
+.selectedCell {
+  border: 1px solid #DADADA;
+  background-color: #AAA;
   width: 100px;
   height: 30px;
 }
