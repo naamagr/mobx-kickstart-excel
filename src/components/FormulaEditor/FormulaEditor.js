@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import s from './FormulaEditor.scss';
-import {observer} from 'mobx-react' ;
+import {observer} from 'mobx-react';
 import {setSelectedCellValue, getSelectedCellFormula} from '../../store';
 
 const InputWithState = observer(class extends React.Component {
@@ -33,16 +33,25 @@ const InputWithState = observer(class extends React.Component {
     this.setState({value: e.target.value});
   }
 
+  componentDidUpdate() {
+    this.nameInput.focus();
+  }
+
+  componentDidMount() {
+    this.nameInput.focus();
+  }
 
   render() {
     return (
-      <input type="text"
-             className={s.formulaInput}
-             onChange={this.onChange}
-             onKeyPress={this.onKeyPress}
-             value={this.state.value}
+      <input
+        ref={(input) => {this.nameInput = input;}}
+        type="text"
+        className={s.formulaInput}
+        onChange={this.onChange}
+        onKeyPress={this.onKeyPress}
+        value={this.state.value}
       />
-    )
+    );
   }
 });
 
@@ -53,8 +62,10 @@ InputWithState.propTypes = {
 
 const FormulaEditor = observer(() => (
   <div className={s.formulaEditor}>
-    Formula: <InputWithState value={getSelectedCellFormula()} onChange={() => {
-  }}/>
+    Formula: <InputWithState
+      value={getSelectedCellFormula()}
+      onChange={() => {}}
+      />
   </div>
 ));
 

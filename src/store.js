@@ -59,9 +59,7 @@ function evaluate(formula) {
 
   formula = formula.replace('=', '');
 
-
   return (eval(formula));
-
 }
 
 function getRelevantCells(formula) {
